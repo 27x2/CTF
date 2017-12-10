@@ -1,3 +1,0 @@
-# SHA-1 is dead
-
-For this challenge, I used [sha1collider](https://github.com/nneonneo/sha1collider) to create a  two files have same SHA-1. I usded his example than deleted a half in original files then I use that tool to make 2 file pdf same SHA-1 but differece and 2017KB < file1,file2 < 2018KB
