@@ -6,3 +6,4 @@ tktk-892009a0993d079214efa167cda2e7afc85e6b9cb38588cba9dab23eb6eb3d46.jpg  339 x
 ```
 I made a jpeg file same pixel and compare with the picture in HXD. Search ```fc```, clearly at the first result, I can see the wrong byte.
 Change ``` FF FC A2 ``` to ``` FD FC A2 ``` and tada:
+![img](https://github.com/BinhHuynh/CTF/blob/master/SECCON2017/Binary/JPEG%20file/flag.jpg)
