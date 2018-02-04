@@ -1,8 +1,7 @@
 # SharifCTF 2018 - hidden - 100p
 ## Description
-  ``` Find the hidden process.
-
-The flag is SharifCTF{MD5(Process id)}.```
+  ``` Find the hidden process.```
+  ```The flag is SharifCTF{MD5(Process id)}.```
 
 File đề cho là một file dump, như thường lệ ta kiểm tra file bằng volatility với lệnh imageinfo để xem những thông tin cơ bản của file.
 ```$volatility -f dump imageinfo```
@@ -19,13 +18,13 @@ File đề cho là một file dump, như thường lệ ta kiểm tra file bằn
                 KPCR for CPU 0 : 0xffdff000L
              KUSER_SHARED_DATA : 0xffdf0000L
            Image date and time : 2018-01-28 17:35:20 UTC+0000
-     Image local date and time : 2018-01-28 21:05:20 +0330```
+     Image local date and time : 2018-01-28 21:05:20 +0330.
+  ```
      
-Ok đây vậy là profile của file dump là WinXPSP2x86, đề bài yêu cầu ta phải tìm hidden process, có một plugin rất hay của volatility hỗ trợ là ta xem các tiến trình là `psxview`:
+Ok đây vậy là profile của file dump là WinXPSP2x86, đề bài yêu cầu ta phải tìm hidden process, có một plugin rất hay của volatility hỗ trợ là ta xem các tiến trình là ```psxview```:
 ```$volatility -f dump --profile=WinXPSP2x86 psxview```
-```
-Volatility Foundation Volatility Framework 2.6
-Offset(P)  Name                    PID pslist psscan thrdproc pspcid csrss session deskthrd ExitTime
+
+```Offset(P)  Name                    PID pslist psscan thrdproc pspcid csrss session deskthrd ExitTime
 ---------- -------------------- ------ ------ ------ -------- ------ ----- ------- -------- --------
 0x010eb4c0 rundll32.exe            396 True   True   False    True   True  True    True     
 0x01c279c0 svchost.exe             900 True   True   False    True   True  True    True     
@@ -47,6 +46,7 @@ Offset(P)  Name                    PID pslist psscan thrdproc pspcid csrss sessi
 0x01bbd900 smss.exe                548 True   True   False    True   False False   False    
 0x021a7da0 csrss.exe               620 True   True   False    True   False True    True     
 0x02dbb448 wmiprvse.exe            908 False  True   False    False  False False   False    2018-01-28 17:34:22 UTC+0000
-0x01ebe168 cmd.exe                1704 False  True   False    False  False False   False    2018-01-28 17:34:00 UTC+0000```
+0x01ebe168 cmd.exe                1704 False  True   False    False  False False   False    2018-01-28 17:34:00 UTC+0000
+```
   
   Trong volatility thì lệnh ```pslist``` là in ra các tiến trình đang hoạt động rõ (tức là tường minh, đoạn này không biết dùng từ gì miêu tả cho đúng xD) còn `psscan` là hiện tất cả các tiến trình bao gồm cả tiến trình ẩn. Như vậy ta thấy tiến trình `vmtoolsd.exe` với ```PID: 404``` chính là tiến trình ta cần tìm
