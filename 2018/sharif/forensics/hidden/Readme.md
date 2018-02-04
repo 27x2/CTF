@@ -4,6 +4,7 @@
   ```The flag is SharifCTF{MD5(Process id)}.```
 
 File đề cho là một file dump, như thường lệ ta kiểm tra file bằng volatility với lệnh imageinfo để xem những thông tin cơ bản của file.
+
 ```$volatility -f dump imageinfo```
 
 ```INFO    : volatility.debug    : Determining profile based on KDBG search...
@@ -22,6 +23,7 @@ File đề cho là một file dump, như thường lệ ta kiểm tra file bằn
   ```
      
 Ok đây vậy là profile của file dump là WinXPSP2x86, đề bài yêu cầu ta phải tìm hidden process, có một plugin rất hay của volatility hỗ trợ là ta xem các tiến trình là ```psxview```:
+
 ```$volatility -f dump --profile=WinXPSP2x86 psxview```
 
 ```Offset(P)  Name                    PID pslist psscan thrdproc pspcid csrss session deskthrd ExitTime
@@ -49,4 +51,4 @@ Ok đây vậy là profile của file dump là WinXPSP2x86, đề bài yêu cầ
 0x01ebe168 cmd.exe                1704 False  True   False    False  False False   False    2018-01-28 17:34:00 UTC+0000
 ```
   
-  Trong volatility thì lệnh ```pslist``` là in ra các tiến trình đang hoạt động rõ (tức là tường minh, đoạn này không biết dùng từ gì miêu tả cho đúng xD) còn `psscan` là hiện tất cả các tiến trình bao gồm cả tiến trình ẩn. Như vậy ta thấy tiến trình `vmtoolsd.exe` với ```PID: 404``` chính là tiến trình ta cần tìm
+ Trong volatility thì lệnh ```pslist``` là in ra các tiến trình đang hoạt động rõ (tức là tường minh, đoạn này không biết dùng từ gì miêu tả cho đúng xD) còn `psscan` là hiện tất cả các tiến trình bao gồm cả tiến trình ẩn. Như vậy ta thấy tiến trình `vmtoolsd.exe` với ```PID: 404``` chính là tiến trình ta cần tìm
