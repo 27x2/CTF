@@ -13,7 +13,7 @@ Mở file vừa tải bằng `HXD`, ta thấy đó là một file ảnh nhưng b
 
 <img src=https://github.com/BinhHuynh/CTF/blob/master/2018/sharif/forensics/client%2001/img2.PNG>
 
-Nếu thiếu thì mình chèn vào thôi, ```89 4E 47``` thành ```89 4E 47```
+Nếu thiếu thì mình chèn vào thôi, ```89 4E 47``` thành ```89 50 4E 47```
 
 Và thế là ta có flag:
 
