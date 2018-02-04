@@ -11,7 +11,7 @@
 ```http://www.filehosting.org/file/details/720884/file```, thử tải về xem sao.
 Mở file vừa tải bằng `HXD`, ta thấy đó là một file ảnh nhưng bị thiếu mất 1 byte ở phần header.
 
-![img](https://imgur.com/a/EqG3x)
+<img src=https://imgur.com/a/EqG3x>
 
 Nếu thiếu thì mình chèn vào thôi, ```89 4E 47``` thành ```89 4E 47```
 
