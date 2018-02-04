@@ -1,7 +1,8 @@
 # SharifCTF 2018 - hidden - 100p
 ## Description
-  ``` Find the hidden process.```
-  ```The flag is SharifCTF{MD5(Process id)}.```
+  ``` Find the hidden process.
+  The flag is SharifCTF{MD5(Process id)}.
+  ```
 
 File đề cho là một file dump, như thường lệ ta kiểm tra file bằng volatility với lệnh imageinfo để xem những thông tin cơ bản của file.
 
