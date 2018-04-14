@@ -19,11 +19,13 @@ This time, I used zsteg and got something
 ![img](https://github.com/BinhHuynh/CTF/blob/master/2018/Hitb/misc/tpyx/Screenshot3.PNG)
 
 It's a zlib, let uncompress it by zlib-flate
-`zlib-flate -uncompress < zlib-flate -uncompress < Untitled1.zlib`
+`zlib-flate -uncompress < Untitled1.zlib`
+
 
 Hm it's look like a hex code, check the header we can easily know it's a 7z file.
 
 Nah, It's request the password, I tried a brucrefore but it's not necessary because the password is the string we can see when open the file in 010 Hex Editor
+
 ![img](https://github.com/BinhHuynh/CTF/blob/master/2018/Hitb/misc/tpyx/Screenshot4.PNG)
 
 ![img](https://github.com/BinhHuynh/CTF/blob/master/2018/Hitb/misc/tpyx/Screenshot5.PNG)
