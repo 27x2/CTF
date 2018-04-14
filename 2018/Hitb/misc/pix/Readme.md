@@ -4,7 +4,7 @@ Again we have a PNG file, and one more time I used zsteg, and we got a keepass f
 
 ![img](https://github.com/BinhHuynh/CTF/blob/master/2018/Hitb/misc/pix/screenshot1.png)
 
-Follow the hint, I created a password dictionary by this python code
+Follow the hint, I created a password dictionary by this python [code](https://github.com/BinhHuynh/CTF/blob/master/2018/Hitb/misc/pix/pw.py)
 now, let's find out the password by john:
 
 ![img](https://github.com/BinhHuynh/CTF/blob/master/2018/Hitb/misc/pix/screenshot2.png)
