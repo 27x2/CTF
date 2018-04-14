@@ -1,4 +1,4 @@
-#Pix Writeup
+# Pix Writeup
 
 Again we have a PNG file, and one more time I used zsteg, and we got a keepass file.
 
