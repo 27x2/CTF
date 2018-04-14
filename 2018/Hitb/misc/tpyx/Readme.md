@@ -6,9 +6,11 @@ In this challenge, we have a png file. Firstly, I put it into pngtweak to check 
 
 Oh, something error here, let's open it's in 010 Hex Editor. As you can see, the 010 Hex Editor can't identified the last chunk (it's IEND chunk).
 
-By the notification of PNG tweak, we knew the problem is the length of the IDAT chunk, you can fix it by do the math:
+By the notification of PNG tweak, we knew the problem is the length of the IDAT chunk change `1162839` to `1164470`
+
 ![img](https://github.com/BinhHuynh/CTF/blob/master/2018/Hitb/misc/tpyx/Screenshot2.PNG)
-Hm, let's check it again by PNGtweak, oops we need to fix the CRC. 
+
+Hm, let's check it again by PNGtweak, oops we need to fix the CRC, change `BA3DE214h` to `6A0412FFh`. 
 
 Okay now it's correct but nothing here.
 
